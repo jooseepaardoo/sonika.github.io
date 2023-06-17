@@ -45,6 +45,20 @@
             color: #E1306C;
         }
 
+        .fullscreen-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white !important;
+            z-index: 9999;
+            overflow-y: auto;
+        }
+
+        .fullscreen-navbar .container {
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -56,7 +70,8 @@
         <nav class="navbar navbar-custom navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    onclick="toggleFullscreenNavbar()">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -109,5 +124,11 @@
     </footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleFullscreenNavbar() {
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('fullscreen-navbar');
+        }
+    </script>
 </body>
 </html>
